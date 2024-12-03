@@ -1,7 +1,6 @@
 package utilidades;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Time {
 
@@ -13,23 +12,18 @@ public class Time {
     public Integer golsFeitos;
     public Integer golsSofridos;
     public Integer golsSaldo;
-    public Integer chanceGols;
-    public ArrayList<Time> times = new ArrayList<>();
-    public ArrayList<Time[]> confrontosHistorico = new ArrayList<>();
-    public Time[] confrontoAtual = new Time[2];
+    public static ArrayList<Time> times = new ArrayList<>();
+    public static ArrayList<Time[]> confrontosTurno1 = new ArrayList<>();
+    public static ArrayList<Time[]> confrontosTurno2 = new ArrayList<>();
 
-
-
-    Random sortear = new Random();
-
-    String[] timesSeriaA = {
+    static String[] timesSeriaA = {
             "Palmeiras", "Atlético-MG", "Flamengo", "Grêmio", "Botafogo",
             "Red Bull Bragantino", "Fluminense", "Athletico-PR", "Internacional", "Fortaleza",
             "São Paulo", "Cuiabá", "Corinthians", "Cruzeiro", "Vasco",
             "Bahia", "Vitória", "Juventude", "Criciúma", "Atlético-GO"
     };
 
-    String[] timesSerieB = {
+    static String[] timesSerieB = {
             "Amazonas", "América-MG", "Avaí", "Botafogo-SP", "Brusque",
             "Ceará", "Chapecoense", "Coritiba", "CRB", "Goiás",
             "Guarani", "Ituano", "Mirassol", "Novorizontino", "Operário",
@@ -49,7 +43,7 @@ public class Time {
         this.golsSaldo = golsSaldo;
     }
 
-    public void CriarTabela(int escolhaCampeonato) {
+    public static void definirTimes(int escolhaCampeonato) {
 
         if (escolhaCampeonato == 1) {
             for (String nome : timesSeriaA){
@@ -63,18 +57,5 @@ public class Time {
         else {
             System.out.println("Erro! Escolha uma opção válida!");
         }
-    }
-
-
-    @Override
-    public String toString() {
-        return "Time: " + nome +
-                ", Pontos: " + pontos +
-                ", Vitórias: " + vitorias +
-                ", Empates: " + empates +
-                ", Derrotas: " + derrotas +
-                ", Gols Feitos: " + golsFeitos +
-                ", Gols Sofridos: " + golsSofridos +
-                ", Saldo de Gols: " + golsSaldo;
     }
 }
