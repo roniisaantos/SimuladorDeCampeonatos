@@ -2,6 +2,7 @@ package aplicacao;
 
 import utilidades.Classificacao;
 import utilidades.Rodada;
+import utilidades.Tela;
 import utilidades.Time;
 
 import java.util.InputMismatchException;
@@ -19,7 +20,7 @@ public class Programa {
                 System.out.print("""
                     \n[1] Brasileirão Série A 2024
                     [2] Brasileirão Série B 2024
-                    
+
                     --> QUAL CAMPEONATO DESEJA SIMULAR:""" + " ");
 
                 opcao = entrada.nextInt();
